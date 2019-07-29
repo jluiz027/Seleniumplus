@@ -8,7 +8,7 @@
     <owners>jorge Barbosa</owners>
     <licenseUrl>https://github.com/jluiz027/seleniumplus</licenseUrl>
     <projectUrl>https://github.com/jluiz027/seleniumplus</projectUrl>
-    <iconUrl>https://github.com/jluiz027/seleniumplus</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/jluiz027/seleniumplus/master/assets/seleniumplus_icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Seleniumplus is a C# .Net Core Selenium extension to make Web UI interactions easier like click in a html element or send text to a input text.</description>
     <releaseNotes>First and experimental version</releaseNotes>
