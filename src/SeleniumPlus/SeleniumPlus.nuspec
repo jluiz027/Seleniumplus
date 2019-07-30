@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>seleniumplus</id>
-    <version>0.8</version>
+    <version>0.8.11</version>
     <title>Seleniumplus</title>
     <authors>jorge Barbosa</authors>
     <owners>jorge Barbosa</owners>
@@ -15,12 +15,15 @@
     <copyright>Copyright 2019</copyright>
     <tags>Selenium DotNetCore Tests Extension</tags>
 	<dependencies>
-      <group targetFramework=".netstandard2.0" />
-    </dependencies>
+    <group targetFramework=".netstandard2.0">
+      <dependency id="Selenium.Support" version="3.141.0" />
+      <dependency id="Selenium.WebDriver" version="3.141.0" />
+    </group>
+  </dependencies>
   </metadata>
   <files>
-	<file src="bin\Release\netcoreapp2.2\SeleniumPlus.dll" target="lib\netstandard2.2" />
-	<file src="bin\Release\netcoreapp2.2\SeleniumPlus.pdb" target="lib\netstandard2.2" />
-	<file src="bin\Release\netcoreapp2.2\SeleniumPlus.deps.json" target="lib\netstandard2.2" />
+	  <file src="bin\Release\netcoreapp2.2\SeleniumPlus.dll" target="lib\netcoreapp2.2" />
+	  <file src="bin\Release\netcoreapp2.2\SeleniumPlus.pdb" target="lib\netcoreapp2.2" />
+	  <file src="bin\Release\netcoreapp2.2\SeleniumPlus.deps.json" target="lib\netcoreapp2.2" />
   </files>
 </package>
