@@ -11,7 +11,8 @@ namespace Test
         public IWebDriver seleniumWebDriver;
         public SeleniumPlusFixture()
         {
-            seleniumWebDriver = SeleniumPlus.DriverFactory.GetLocalChromeDriver();
+            //seleniumWebDriver = SeleniumPlus.DriverFactory.GetLocalChromeDriver();
+            seleniumWebDriver = SeleniumPlus.DriverFactory.GetRemoteChromeDriver("http://localhost:4444/wd/hub");
         }
     }
 }
