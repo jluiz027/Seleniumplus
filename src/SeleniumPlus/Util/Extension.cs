@@ -380,16 +380,50 @@ namespace SeleniumPlus.Util
             Thread.Sleep(timeSeconds * 1000);
         }
 
-        public static void TryNavigateToUrl(this IWebDriver driver, int howManyTimes, int timeBetweenTriesSeconds, string url)
+        public static void TryNavigateToUrl(this IWebDriver driver, int howManyTimes, int timeBetweenTriesSeconds, string url, string urlTovalidate = "")
         {
             for (int i = 0; i < howManyTimes; i++)
             {
-                driver.Navigate().GoToUrl(url);
-                wait(driver,timeBetweenTriesSeconds);
-                if (driver.Url.Contains(url))
+                try
                 {
-                    return;
+                    driver.Navigate().GoToUrl(url);
+                    wait(driver, timeBetweenTriesSeconds);
+                    if (string.IsNullOrEmpty(urlTovalidate))
+                    {
+                        if (driver.Url.Contains(url))
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (driver.Url.Contains(urlTovalidate))
+                        {
+                            return;
+                        }
+                    }
+
                 }
+                catch (Exception)
+                {
+                    if (string.IsNullOrEmpty(urlTovalidate))
+                    {
+                        if (driver.Url.Contains(url))
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (driver.Url.Contains(urlTovalidate))
+                        {
+                            return;
+                        }
+                    }
+                    //log error 
+                    //throw;
+                }               
+                
             }
             throw new TryEnoughTimesToGetException();
         }

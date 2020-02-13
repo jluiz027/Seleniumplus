@@ -10,6 +10,17 @@ namespace SeleniumPlus
 {
     public class DriverFactory
     {
+
+        /// <summary>
+        /// Returns a local selenium Chromedriver (IWebDriver) whose executable file is inside app root folder
+        /// </summary>
+        /// <returns>Selenium Chromedriver (IWebDriver)</returns>
+        public static IWebDriver GetLocalChromeDriver()
+        {
+            IWebDriver webDriver = new ChromeDriver();
+            return webDriver;
+        }
+
         /// <summary>
         /// Returns a local selenium Chromedriver (IWebDriver) by passing its current file location path (*.exe)
         /// </summary>
